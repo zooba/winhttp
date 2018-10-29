@@ -7258,7 +7258,7 @@ static PyObject *__pyx_pf_8_winhttp_15_WinHTTPSession_2connect(struct __pyx_obj_
  * 
  *         return conn             # <<<<<<<<<<<<<<
  * 
- * def urlsplit(str url):
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(((PyObject *)__pyx_v_conn));
@@ -7393,8 +7393,8 @@ static PyObject *__pyx_pf_8_winhttp_15_WinHTTPSession_6__setstate_cython__(CYTHO
   return __pyx_r;
 }
 
-/* "_winhttp.pyx":381
- *         return conn
+/* "_winhttp.pyx":382
+ * 
  * 
  * def urlsplit(str url):             # <<<<<<<<<<<<<<
  *     cdef URL_COMPONENTS res
@@ -7408,7 +7408,7 @@ static PyObject *__pyx_pw_8_winhttp_5urlsplit(PyObject *__pyx_self, PyObject *__
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("urlsplit (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_url), (&PyUnicode_Type), 1, "url", 1))) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_url), (&PyUnicode_Type), 1, "url", 1))) __PYX_ERR(0, 382, __pyx_L1_error)
   __pyx_r = __pyx_pf_8_winhttp_4urlsplit(__pyx_self, ((PyObject*)__pyx_v_url));
 
   /* function exit code */
@@ -7443,7 +7443,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("urlsplit", 0);
 
-  /* "_winhttp.pyx":384
+  /* "_winhttp.pyx":385
  *     cdef URL_COMPONENTS res
  * 
  *     ZeroMemory(&res, sizeof(res))             # <<<<<<<<<<<<<<
@@ -7452,7 +7452,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
   ZeroMemory((&__pyx_v_res), (sizeof(__pyx_v_res)));
 
-  /* "_winhttp.pyx":385
+  /* "_winhttp.pyx":386
  * 
  *     ZeroMemory(&res, sizeof(res))
  *     res.dwStructSize = sizeof(res)             # <<<<<<<<<<<<<<
@@ -7461,7 +7461,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
   __pyx_v_res.dwStructSize = (sizeof(__pyx_v_res));
 
-  /* "_winhttp.pyx":388
+  /* "_winhttp.pyx":389
  *     # Just have to initialize the contents, and these will be
  *     # overwritten by the function call
  *     res.dwSchemeLength = res.dwHostNameLength = res.dwUserNameLength = <DWORD>-1             # <<<<<<<<<<<<<<
@@ -7472,7 +7472,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_res.dwHostNameLength = ((DWORD)-1L);
   __pyx_v_res.dwUserNameLength = ((DWORD)-1L);
 
-  /* "_winhttp.pyx":389
+  /* "_winhttp.pyx":390
  *     # overwritten by the function call
  *     res.dwSchemeLength = res.dwHostNameLength = res.dwUserNameLength = <DWORD>-1
  *     res.dwPasswordLength = res.dwUrlPathLength = res.dwExtraInfoLength = <DWORD>-1             # <<<<<<<<<<<<<<
@@ -7483,34 +7483,34 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_res.dwUrlPathLength = ((DWORD)-1L);
   __pyx_v_res.dwExtraInfoLength = ((DWORD)-1L);
 
-  /* "_winhttp.pyx":392
+  /* "_winhttp.pyx":393
  * 
  *     check_bool(WinHttpCrackUrl(
  *         url,             # <<<<<<<<<<<<<<
  *         0,
  *         0,
  */
-  __pyx_t_1 = __Pyx_PyUnicode_AsUnicode(__pyx_v_url); if (unlikely((__pyx_t_1 == ((LPCWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_AsUnicode(__pyx_v_url); if (unlikely((__pyx_t_1 == ((LPCWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 393, __pyx_L1_error)
 
-  /* "_winhttp.pyx":391
+  /* "_winhttp.pyx":392
  *     res.dwPasswordLength = res.dwUrlPathLength = res.dwExtraInfoLength = <DWORD>-1
  * 
  *     check_bool(WinHttpCrackUrl(             # <<<<<<<<<<<<<<
  *         url,
  *         0,
  */
-  __pyx_t_2 = __pyx_f_8_winhttp_check_bool(WinHttpCrackUrl(__pyx_t_1, 0, 0, (&__pyx_v_res))); if (unlikely(__pyx_t_2 == ((BOOL)0) && PyErr_Occurred())) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_8_winhttp_check_bool(WinHttpCrackUrl(__pyx_t_1, 0, 0, (&__pyx_v_res))); if (unlikely(__pyx_t_2 == ((BOOL)0) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
 
-  /* "_winhttp.pyx":398
+  /* "_winhttp.pyx":399
  *     ))
  * 
  *     query, _, fragment = res.lpszExtraInfo[:res.dwExtraInfoLength].rpartition('#')             # <<<<<<<<<<<<<<
  *     if query and query[0] == "?":
  *         query = query[1:]
  */
-  __pyx_t_4 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszExtraInfo) + 0, __pyx_v_res.dwExtraInfoLength - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 398, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszExtraInfo) + 0, __pyx_v_res.dwExtraInfoLength - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_rpartition); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 398, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_rpartition); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -7525,7 +7525,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   }
   __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_kp_u__24) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_kp_u__24);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
@@ -7534,7 +7534,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 398, __pyx_L1_error)
+      __PYX_ERR(0, 399, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -7550,17 +7550,17 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_INCREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_t_6);
     #else
-    __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 399, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_6 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 399, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     #endif
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_7 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_7 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_8 = Py_TYPE(__pyx_t_7)->tp_iternext;
@@ -7570,7 +7570,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_GOTREF(__pyx_t_4);
     index = 2; __pyx_t_6 = __pyx_t_8(__pyx_t_7); if (unlikely(!__pyx_t_6)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_7), 3) < 0) __PYX_ERR(0, 398, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_7), 3) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
     __pyx_t_8 = NULL;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     goto __pyx_L4_unpacking_done;
@@ -7578,7 +7578,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 398, __pyx_L1_error)
+    __PYX_ERR(0, 399, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_query = __pyx_t_5;
@@ -7588,40 +7588,40 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_fragment = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "_winhttp.pyx":399
+  /* "_winhttp.pyx":400
  * 
  *     query, _, fragment = res.lpszExtraInfo[:res.dwExtraInfoLength].rpartition('#')
  *     if query and query[0] == "?":             # <<<<<<<<<<<<<<
  *         query = query[1:]
  * 
  */
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_query); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_query); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 400, __pyx_L1_error)
   if (__pyx_t_10) {
   } else {
     __pyx_t_9 = __pyx_t_10;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_query, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_query, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_t_3, __pyx_kp_u__25, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_t_3, __pyx_kp_u__25, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_9 = __pyx_t_10;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_9) {
 
-    /* "_winhttp.pyx":400
+    /* "_winhttp.pyx":401
  *     query, _, fragment = res.lpszExtraInfo[:res.dwExtraInfoLength].rpartition('#')
  *     if query and query[0] == "?":
  *         query = query[1:]             # <<<<<<<<<<<<<<
  * 
  *     netloc = res.lpszHostName[:res.dwHostNameLength] if res.dwHostNameLength and res.dwSchemeLength else ""
  */
-    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_query, 1, 0, NULL, NULL, &__pyx_slice__26, 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_query, 1, 0, NULL, NULL, &__pyx_slice__26, 1, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF_SET(__pyx_v_query, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "_winhttp.pyx":399
+    /* "_winhttp.pyx":400
  * 
  *     query, _, fragment = res.lpszExtraInfo[:res.dwExtraInfoLength].rpartition('#')
  *     if query and query[0] == "?":             # <<<<<<<<<<<<<<
@@ -7630,7 +7630,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
   }
 
-  /* "_winhttp.pyx":402
+  /* "_winhttp.pyx":403
  *         query = query[1:]
  * 
  *     netloc = res.lpszHostName[:res.dwHostNameLength] if res.dwHostNameLength and res.dwSchemeLength else ""             # <<<<<<<<<<<<<<
@@ -7647,7 +7647,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_t_9 = __pyx_t_10;
   __pyx_L8_bool_binop_done:;
   if (__pyx_t_9) {
-    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszHostName) + 0, __pyx_v_res.dwHostNameLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszHostName) + 0, __pyx_v_res.dwHostNameLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_3 = __pyx_t_6;
     __pyx_t_6 = 0;
@@ -7658,7 +7658,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_netloc = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_winhttp.pyx":403
+  /* "_winhttp.pyx":404
  * 
  *     netloc = res.lpszHostName[:res.dwHostNameLength] if res.dwHostNameLength and res.dwSchemeLength else ""
  *     username = res.lpszUserName[:res.dwUserNameLength] if res.dwUserNameLength else ""             # <<<<<<<<<<<<<<
@@ -7666,7 +7666,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  * 
  */
   if ((__pyx_v_res.dwUserNameLength != 0)) {
-    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszUserName) + 0, __pyx_v_res.dwUserNameLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 403, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszUserName) + 0, __pyx_v_res.dwUserNameLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_3 = __pyx_t_6;
     __pyx_t_6 = 0;
@@ -7677,7 +7677,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_username = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "_winhttp.pyx":404
+  /* "_winhttp.pyx":405
  *     netloc = res.lpszHostName[:res.dwHostNameLength] if res.dwHostNameLength and res.dwSchemeLength else ""
  *     username = res.lpszUserName[:res.dwUserNameLength] if res.dwUserNameLength else ""
  *     password = res.lpszPassword[:res.dwPasswordLength] if res.dwPasswordLength else ""             # <<<<<<<<<<<<<<
@@ -7685,7 +7685,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  *     if netloc:
  */
   if ((__pyx_v_res.dwPasswordLength != 0)) {
-    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszPassword) + 0, __pyx_v_res.dwPasswordLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 404, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszPassword) + 0, __pyx_v_res.dwPasswordLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 405, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_3 = __pyx_t_6;
     __pyx_t_6 = 0;
@@ -7696,17 +7696,17 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_v_password = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "_winhttp.pyx":406
+  /* "_winhttp.pyx":407
  *     password = res.lpszPassword[:res.dwPasswordLength] if res.dwPasswordLength else ""
  * 
  *     if netloc:             # <<<<<<<<<<<<<<
  *         if res.nPort:
  *             netloc = "{}:{}".format(netloc, res.nPort)
  */
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_netloc); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_netloc); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 407, __pyx_L1_error)
   if (__pyx_t_9) {
 
-    /* "_winhttp.pyx":407
+    /* "_winhttp.pyx":408
  * 
  *     if netloc:
  *         if res.nPort:             # <<<<<<<<<<<<<<
@@ -7716,16 +7716,16 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     __pyx_t_9 = (__pyx_v_res.nPort != 0);
     if (__pyx_t_9) {
 
-      /* "_winhttp.pyx":408
+      /* "_winhttp.pyx":409
  *     if netloc:
  *         if res.nPort:
  *             netloc = "{}:{}".format(netloc, res.nPort)             # <<<<<<<<<<<<<<
  *         if username or password:
  *             netloc = "{}:{}@{}".format(username, password, netloc)
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u__27, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u__27, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_4 = __Pyx_PyInt_From_INTERNET_PORT(__pyx_v_res.nPort); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_INTERNET_PORT(__pyx_v_res.nPort); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 409, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_5 = NULL;
       __pyx_t_11 = 0;
@@ -7742,7 +7742,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_netloc, __pyx_t_4};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -7751,14 +7751,14 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_netloc, __pyx_t_4};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else
       #endif
       {
-        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         if (__pyx_t_5) {
           __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -7769,7 +7769,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_GIVEREF(__pyx_t_4);
         PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_11, __pyx_t_4);
         __pyx_t_4 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
@@ -7777,7 +7777,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       __Pyx_DECREF_SET(__pyx_v_netloc, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "_winhttp.pyx":407
+      /* "_winhttp.pyx":408
  * 
  *     if netloc:
  *         if res.nPort:             # <<<<<<<<<<<<<<
@@ -7786,7 +7786,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
     }
 
-    /* "_winhttp.pyx":409
+    /* "_winhttp.pyx":410
  *         if res.nPort:
  *             netloc = "{}:{}".format(netloc, res.nPort)
  *         if username or password:             # <<<<<<<<<<<<<<
@@ -7804,14 +7804,14 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
     __pyx_L13_bool_binop_done:;
     if (__pyx_t_9) {
 
-      /* "_winhttp.pyx":410
+      /* "_winhttp.pyx":411
  *             netloc = "{}:{}".format(netloc, res.nPort)
  *         if username or password:
  *             netloc = "{}:{}@{}".format(username, password, netloc)             # <<<<<<<<<<<<<<
  * 
  *     return (
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u__28, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 410, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u__28, __pyx_n_s_format); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 411, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = NULL;
       __pyx_t_11 = 0;
@@ -7828,7 +7828,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[4] = {__pyx_t_7, __pyx_v_username, __pyx_v_password, __pyx_v_netloc};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 410, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -7836,13 +7836,13 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
         PyObject *__pyx_temp[4] = {__pyx_t_7, __pyx_v_username, __pyx_v_password, __pyx_v_netloc};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 410, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_4 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 410, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 411, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         if (__pyx_t_7) {
           __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -7856,7 +7856,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_INCREF(__pyx_v_netloc);
         __Pyx_GIVEREF(__pyx_v_netloc);
         PyTuple_SET_ITEM(__pyx_t_4, 2+__pyx_t_11, __pyx_v_netloc);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 410, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 411, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
@@ -7864,7 +7864,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
       __Pyx_DECREF_SET(__pyx_v_netloc, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "_winhttp.pyx":409
+      /* "_winhttp.pyx":410
  *         if res.nPort:
  *             netloc = "{}:{}".format(netloc, res.nPort)
  *         if username or password:             # <<<<<<<<<<<<<<
@@ -7873,7 +7873,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
     }
 
-    /* "_winhttp.pyx":406
+    /* "_winhttp.pyx":407
  *     password = res.lpszPassword[:res.dwPasswordLength] if res.dwPasswordLength else ""
  * 
  *     if netloc:             # <<<<<<<<<<<<<<
@@ -7882,7 +7882,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
   }
 
-  /* "_winhttp.pyx":412
+  /* "_winhttp.pyx":413
  *             netloc = "{}:{}@{}".format(username, password, netloc)
  * 
  *     return (             # <<<<<<<<<<<<<<
@@ -7891,36 +7891,36 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "_winhttp.pyx":413
+  /* "_winhttp.pyx":414
  * 
  *     return (
  *         res.lpszScheme[:res.dwSchemeLength],             # <<<<<<<<<<<<<<
  *         netloc,
  *         res.lpszUrlPath[:res.dwUrlPathLength],
  */
-  __pyx_t_3 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszScheme) + 0, __pyx_v_res.dwSchemeLength - 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 413, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszScheme) + 0, __pyx_v_res.dwSchemeLength - 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 414, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "_winhttp.pyx":415
+  /* "_winhttp.pyx":416
  *         res.lpszScheme[:res.dwSchemeLength],
  *         netloc,
  *         res.lpszUrlPath[:res.dwUrlPathLength],             # <<<<<<<<<<<<<<
  *         query,
  *         fragment,
  */
-  __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszUrlPath) + 0, __pyx_v_res.dwUrlPathLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 415, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszUrlPath) + 0, __pyx_v_res.dwUrlPathLength - 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "_winhttp.pyx":420
+  /* "_winhttp.pyx":421
  *         username,
  *         password,
  *         res.lpszHostName[:res.dwHostNameLength].lower(),             # <<<<<<<<<<<<<<
  *         res.nPort,
  *     )
  */
-  __pyx_t_7 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszHostName) + 0, __pyx_v_res.dwHostNameLength - 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyUnicode_FromUnicodeAndLength(((const Py_UNICODE*)__pyx_v_res.lpszHostName) + 0, __pyx_v_res.dwHostNameLength - 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_lower); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_lower); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = NULL;
@@ -7935,28 +7935,28 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   }
   __pyx_t_4 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 420, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "_winhttp.pyx":421
+  /* "_winhttp.pyx":422
  *         password,
  *         res.lpszHostName[:res.dwHostNameLength].lower(),
  *         res.nPort,             # <<<<<<<<<<<<<<
  *     )
  * 
  */
-  __pyx_t_5 = __Pyx_PyInt_From_INTERNET_PORT(__pyx_v_res.nPort); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_From_INTERNET_PORT(__pyx_v_res.nPort); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "_winhttp.pyx":413
+  /* "_winhttp.pyx":414
  * 
  *     return (
  *         res.lpszScheme[:res.dwSchemeLength],             # <<<<<<<<<<<<<<
  *         netloc,
  *         res.lpszUrlPath[:res.dwUrlPathLength],
  */
-  __pyx_t_7 = PyTuple_New(9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 413, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 414, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3);
@@ -7989,8 +7989,8 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "_winhttp.pyx":381
- *         return conn
+  /* "_winhttp.pyx":382
+ * 
  * 
  * def urlsplit(str url):             # <<<<<<<<<<<<<<
  *     cdef URL_COMPONENTS res
@@ -8018,7 +8018,7 @@ static PyObject *__pyx_pf_8_winhttp_4urlsplit(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "_winhttp.pyx":424
+/* "_winhttp.pyx":425
  *     )
  * 
  * def urlunsplit(parts):             # <<<<<<<<<<<<<<
@@ -8075,153 +8075,153 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
   BOOL __pyx_t_15;
   __Pyx_RefNannySetupContext("urlunsplit", 0);
 
-  /* "_winhttp.pyx":427
+  /* "_winhttp.pyx":428
  *     # str scheme, str netloc, str path, str query, str fragment, str username, str password, str host, int port
  *     cdef URL_COMPONENTS res
  *     ipart = iter(parts)             # <<<<<<<<<<<<<<
  * 
  *     scheme = next(ipart)
  */
-  __pyx_t_1 = PyObject_GetIter(__pyx_v_parts); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_1 = PyObject_GetIter(__pyx_v_parts); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_ipart = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":429
+  /* "_winhttp.pyx":430
  *     ipart = iter(parts)
  * 
  *     scheme = next(ipart)             # <<<<<<<<<<<<<<
  *     netloc = next(ipart, "")
  *     path = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next(__pyx_v_ipart); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next(__pyx_v_ipart); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_scheme = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":430
+  /* "_winhttp.pyx":431
  * 
  *     scheme = next(ipart)
  *     netloc = next(ipart, "")             # <<<<<<<<<<<<<<
  *     path = next(ipart, "")
  *     query = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_netloc = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":431
+  /* "_winhttp.pyx":432
  *     scheme = next(ipart)
  *     netloc = next(ipart, "")
  *     path = next(ipart, "")             # <<<<<<<<<<<<<<
  *     query = next(ipart, "")
  *     fragment = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":432
+  /* "_winhttp.pyx":433
  *     netloc = next(ipart, "")
  *     path = next(ipart, "")
  *     query = next(ipart, "")             # <<<<<<<<<<<<<<
  *     fragment = next(ipart, "")
  *     username = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 432, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_query = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":433
+  /* "_winhttp.pyx":434
  *     path = next(ipart, "")
  *     query = next(ipart, "")
  *     fragment = next(ipart, "")             # <<<<<<<<<<<<<<
  *     username = next(ipart, "")
  *     password = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_fragment = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":434
+  /* "_winhttp.pyx":435
  *     query = next(ipart, "")
  *     fragment = next(ipart, "")
  *     username = next(ipart, "")             # <<<<<<<<<<<<<<
  *     password = next(ipart, "")
  *     host = next(ipart, "")
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":435
+  /* "_winhttp.pyx":436
  *     fragment = next(ipart, "")
  *     username = next(ipart, "")
  *     password = next(ipart, "")             # <<<<<<<<<<<<<<
  *     host = next(ipart, "")
  *     port = next(ipart, 0)
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_password = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":436
+  /* "_winhttp.pyx":437
  *     username = next(ipart, "")
  *     password = next(ipart, "")
  *     host = next(ipart, "")             # <<<<<<<<<<<<<<
  *     port = next(ipart, 0)
  * 
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 436, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_kp_u__9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_host = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":437
+  /* "_winhttp.pyx":438
  *     password = next(ipart, "")
  *     host = next(ipart, "")
  *     port = next(ipart, 0)             # <<<<<<<<<<<<<<
  * 
  *     if netloc and not host:
  */
-  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIter_Next2(__pyx_v_ipart, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_port = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":439
+  /* "_winhttp.pyx":440
  *     port = next(ipart, 0)
  * 
  *     if netloc and not host:             # <<<<<<<<<<<<<<
  *         host, _, port = netloc.rpartition(':')
  *         port = int(port) if port else 0
  */
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_netloc); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_netloc); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 440, __pyx_L1_error)
   if (__pyx_t_3) {
   } else {
     __pyx_t_2 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_host); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_v_host); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 440, __pyx_L1_error)
   __pyx_t_4 = ((!__pyx_t_3) != 0);
   __pyx_t_2 = __pyx_t_4;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "_winhttp.pyx":440
+    /* "_winhttp.pyx":441
  * 
  *     if netloc and not host:
  *         host, _, port = netloc.rpartition(':')             # <<<<<<<<<<<<<<
  *         port = int(port) if port else 0
  * 
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_netloc, __pyx_n_s_rpartition); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_netloc, __pyx_n_s_rpartition); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 441, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -8235,7 +8235,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
     }
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_kp_u__29) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_kp_u__29);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
@@ -8244,7 +8244,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
       if (unlikely(size != 3)) {
         if (size > 3) __Pyx_RaiseTooManyValuesError(3);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 440, __pyx_L1_error)
+        __PYX_ERR(0, 441, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -8260,17 +8260,17 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_7);
       #else
-      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 441, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 441, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __pyx_t_7 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 441, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 441, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_9 = Py_TYPE(__pyx_t_8)->tp_iternext;
@@ -8280,7 +8280,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_GOTREF(__pyx_t_6);
       index = 2; __pyx_t_7 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_7)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_7);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 3) < 0) __PYX_ERR(0, 440, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 3) < 0) __PYX_ERR(0, 441, __pyx_L1_error)
       __pyx_t_9 = NULL;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L7_unpacking_done;
@@ -8288,7 +8288,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 440, __pyx_L1_error)
+      __PYX_ERR(0, 441, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
     __Pyx_DECREF_SET(__pyx_v_host, __pyx_t_5);
@@ -8298,16 +8298,16 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_DECREF_SET(__pyx_v_port, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "_winhttp.pyx":441
+    /* "_winhttp.pyx":442
  *     if netloc and not host:
  *         host, _, port = netloc.rpartition(':')
  *         port = int(port) if port else 0             # <<<<<<<<<<<<<<
  * 
  *     extra = ""
  */
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_port); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 441, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_port); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 442, __pyx_L1_error)
     if (__pyx_t_2) {
-      __pyx_t_7 = __Pyx_PyNumber_Int(__pyx_v_port); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 441, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyNumber_Int(__pyx_v_port); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 442, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __pyx_t_1 = __pyx_t_7;
       __pyx_t_7 = 0;
@@ -8318,7 +8318,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_DECREF_SET(__pyx_v_port, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "_winhttp.pyx":439
+    /* "_winhttp.pyx":440
  *     port = next(ipart, 0)
  * 
  *     if netloc and not host:             # <<<<<<<<<<<<<<
@@ -8327,7 +8327,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   }
 
-  /* "_winhttp.pyx":443
+  /* "_winhttp.pyx":444
  *         port = int(port) if port else 0
  * 
  *     extra = ""             # <<<<<<<<<<<<<<
@@ -8337,32 +8337,32 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_INCREF(__pyx_kp_u__9);
   __pyx_v_extra = __pyx_kp_u__9;
 
-  /* "_winhttp.pyx":444
+  /* "_winhttp.pyx":445
  * 
  *     extra = ""
  *     if query:             # <<<<<<<<<<<<<<
  *         extra += "?" + query
  *     if fragment:
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_query); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_query); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 445, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "_winhttp.pyx":445
+    /* "_winhttp.pyx":446
  *     extra = ""
  *     if query:
  *         extra += "?" + query             # <<<<<<<<<<<<<<
  *     if fragment:
  *         extra += "#" + fragment
  */
-    __pyx_t_1 = PyNumber_Add(__pyx_kp_u__25, __pyx_v_query); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 445, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(__pyx_kp_u__25, __pyx_v_query); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_extra, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 445, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_extra, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_extra, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "_winhttp.pyx":444
+    /* "_winhttp.pyx":445
  * 
  *     extra = ""
  *     if query:             # <<<<<<<<<<<<<<
@@ -8371,32 +8371,32 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   }
 
-  /* "_winhttp.pyx":446
+  /* "_winhttp.pyx":447
  *     if query:
  *         extra += "?" + query
  *     if fragment:             # <<<<<<<<<<<<<<
  *         extra += "#" + fragment
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_fragment); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_fragment); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 447, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "_winhttp.pyx":447
+    /* "_winhttp.pyx":448
  *         extra += "?" + query
  *     if fragment:
  *         extra += "#" + fragment             # <<<<<<<<<<<<<<
  * 
  *     res.dwStructSize = sizeof(res)
  */
-    __pyx_t_7 = PyNumber_Add(__pyx_kp_u__24, __pyx_v_fragment); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 447, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Add(__pyx_kp_u__24, __pyx_v_fragment); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_extra, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 447, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_extra, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF_SET(__pyx_v_extra, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "_winhttp.pyx":446
+    /* "_winhttp.pyx":447
  *     if query:
  *         extra += "?" + query
  *     if fragment:             # <<<<<<<<<<<<<<
@@ -8405,7 +8405,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   }
 
-  /* "_winhttp.pyx":449
+  /* "_winhttp.pyx":450
  *         extra += "#" + fragment
  * 
  *     res.dwStructSize = sizeof(res)             # <<<<<<<<<<<<<<
@@ -8414,152 +8414,152 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   __pyx_v_res.dwStructSize = (sizeof(__pyx_v_res));
 
-  /* "_winhttp.pyx":450
+  /* "_winhttp.pyx":451
  * 
  *     res.dwStructSize = sizeof(res)
  *     res.lpszScheme = scheme             # <<<<<<<<<<<<<<
  *     res.dwSchemeLength = <DWORD>len(scheme)
  *     res.lpszHostName = host
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_scheme); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 450, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_scheme); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 451, __pyx_L1_error)
   __pyx_v_res.lpszScheme = __pyx_t_10;
 
-  /* "_winhttp.pyx":451
+  /* "_winhttp.pyx":452
  *     res.dwStructSize = sizeof(res)
  *     res.lpszScheme = scheme
  *     res.dwSchemeLength = <DWORD>len(scheme)             # <<<<<<<<<<<<<<
  *     res.lpszHostName = host
  *     res.dwHostNameLength = <DWORD>len(host)
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_scheme); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 451, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_scheme); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 452, __pyx_L1_error)
   __pyx_v_res.dwSchemeLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":452
+  /* "_winhttp.pyx":453
  *     res.lpszScheme = scheme
  *     res.dwSchemeLength = <DWORD>len(scheme)
  *     res.lpszHostName = host             # <<<<<<<<<<<<<<
  *     res.dwHostNameLength = <DWORD>len(host)
  *     res.nPort = <INTERNET_PORT>port
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_host); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_host); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L1_error)
   __pyx_v_res.lpszHostName = __pyx_t_10;
 
-  /* "_winhttp.pyx":453
+  /* "_winhttp.pyx":454
  *     res.dwSchemeLength = <DWORD>len(scheme)
  *     res.lpszHostName = host
  *     res.dwHostNameLength = <DWORD>len(host)             # <<<<<<<<<<<<<<
  *     res.nPort = <INTERNET_PORT>port
  *     res.lpszUserName = username
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_host); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_host); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 454, __pyx_L1_error)
   __pyx_v_res.dwHostNameLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":454
+  /* "_winhttp.pyx":455
  *     res.lpszHostName = host
  *     res.dwHostNameLength = <DWORD>len(host)
  *     res.nPort = <INTERNET_PORT>port             # <<<<<<<<<<<<<<
  *     res.lpszUserName = username
  *     res.dwUserNameLength = <DWORD>len(username)
  */
-  __pyx_t_12 = __Pyx_PyInt_As_INTERNET_PORT(__pyx_v_port); if (unlikely((__pyx_t_12 == ((INTERNET_PORT)-1)) && PyErr_Occurred())) __PYX_ERR(0, 454, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyInt_As_INTERNET_PORT(__pyx_v_port); if (unlikely((__pyx_t_12 == ((INTERNET_PORT)-1)) && PyErr_Occurred())) __PYX_ERR(0, 455, __pyx_L1_error)
   __pyx_v_res.nPort = ((INTERNET_PORT)__pyx_t_12);
 
-  /* "_winhttp.pyx":455
+  /* "_winhttp.pyx":456
  *     res.dwHostNameLength = <DWORD>len(host)
  *     res.nPort = <INTERNET_PORT>port
  *     res.lpszUserName = username             # <<<<<<<<<<<<<<
  *     res.dwUserNameLength = <DWORD>len(username)
  *     res.lpszPassword = password
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_username); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_username); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L1_error)
   __pyx_v_res.lpszUserName = __pyx_t_10;
 
-  /* "_winhttp.pyx":456
+  /* "_winhttp.pyx":457
  *     res.nPort = <INTERNET_PORT>port
  *     res.lpszUserName = username
  *     res.dwUserNameLength = <DWORD>len(username)             # <<<<<<<<<<<<<<
  *     res.lpszPassword = password
  *     res.dwPasswordLength = <DWORD>len(password)
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_username); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_username); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 457, __pyx_L1_error)
   __pyx_v_res.dwUserNameLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":457
+  /* "_winhttp.pyx":458
  *     res.lpszUserName = username
  *     res.dwUserNameLength = <DWORD>len(username)
  *     res.lpszPassword = password             # <<<<<<<<<<<<<<
  *     res.dwPasswordLength = <DWORD>len(password)
  *     res.lpszUrlPath = path
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_password); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_password); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 458, __pyx_L1_error)
   __pyx_v_res.lpszPassword = __pyx_t_10;
 
-  /* "_winhttp.pyx":458
+  /* "_winhttp.pyx":459
  *     res.dwUserNameLength = <DWORD>len(username)
  *     res.lpszPassword = password
  *     res.dwPasswordLength = <DWORD>len(password)             # <<<<<<<<<<<<<<
  *     res.lpszUrlPath = path
  *     res.dwUrlPathLength = <DWORD>len(path)
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_password); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 458, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_password); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 459, __pyx_L1_error)
   __pyx_v_res.dwPasswordLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":459
+  /* "_winhttp.pyx":460
  *     res.lpszPassword = password
  *     res.dwPasswordLength = <DWORD>len(password)
  *     res.lpszUrlPath = path             # <<<<<<<<<<<<<<
  *     res.dwUrlPathLength = <DWORD>len(path)
  *     res.lpszExtraInfo = extra
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_path); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 459, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_path); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 460, __pyx_L1_error)
   __pyx_v_res.lpszUrlPath = __pyx_t_10;
 
-  /* "_winhttp.pyx":460
+  /* "_winhttp.pyx":461
  *     res.dwPasswordLength = <DWORD>len(password)
  *     res.lpszUrlPath = path
  *     res.dwUrlPathLength = <DWORD>len(path)             # <<<<<<<<<<<<<<
  *     res.lpszExtraInfo = extra
  *     res.dwExtraInfoLength = <DWORD>len(extra)
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_path); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 460, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_path); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 461, __pyx_L1_error)
   __pyx_v_res.dwUrlPathLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":461
+  /* "_winhttp.pyx":462
  *     res.lpszUrlPath = path
  *     res.dwUrlPathLength = <DWORD>len(path)
  *     res.lpszExtraInfo = extra             # <<<<<<<<<<<<<<
  *     res.dwExtraInfoLength = <DWORD>len(extra)
  * 
  */
-  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_extra); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 461, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyUnicode_AsUnicode(__pyx_v_extra); if (unlikely((__pyx_t_10 == ((LPWSTR)NULL)) && PyErr_Occurred())) __PYX_ERR(0, 462, __pyx_L1_error)
   __pyx_v_res.lpszExtraInfo = __pyx_t_10;
 
-  /* "_winhttp.pyx":462
+  /* "_winhttp.pyx":463
  *     res.dwUrlPathLength = <DWORD>len(path)
  *     res.lpszExtraInfo = extra
  *     res.dwExtraInfoLength = <DWORD>len(extra)             # <<<<<<<<<<<<<<
  * 
  *     url = bytearray(256 * sizeof(Py_UNICODE))
  */
-  __pyx_t_11 = PyObject_Length(__pyx_v_extra); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_11 = PyObject_Length(__pyx_v_extra); if (unlikely(__pyx_t_11 == ((Py_ssize_t)-1))) __PYX_ERR(0, 463, __pyx_L1_error)
   __pyx_v_res.dwExtraInfoLength = ((DWORD)__pyx_t_11);
 
-  /* "_winhttp.pyx":464
+  /* "_winhttp.pyx":465
  *     res.dwExtraInfoLength = <DWORD>len(extra)
  * 
  *     url = bytearray(256 * sizeof(Py_UNICODE))             # <<<<<<<<<<<<<<
  *     cdef DWORD url_len = 255
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):
  */
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t((0x100 * (sizeof(Py_UNICODE)))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 464, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t((0x100 * (sizeof(Py_UNICODE)))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyByteArray_Type)), __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 464, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyByteArray_Type)), __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_url = ((PyObject*)__pyx_t_7);
   __pyx_t_7 = 0;
 
-  /* "_winhttp.pyx":465
+  /* "_winhttp.pyx":466
  * 
  *     url = bytearray(256 * sizeof(Py_UNICODE))
  *     cdef DWORD url_len = 255             # <<<<<<<<<<<<<<
@@ -8568,18 +8568,18 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   __pyx_v_url_len = 0xFF;
 
-  /* "_winhttp.pyx":466
+  /* "_winhttp.pyx":467
  *     url = bytearray(256 * sizeof(Py_UNICODE))
  *     cdef DWORD url_len = 255
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):             # <<<<<<<<<<<<<<
  *         if GetLastError() != ERROR_INSUFFICIENT_BUFFER:
  *             raise_error()
  */
-  __pyx_t_13 = __Pyx_PyObject_AsWritableUString(__pyx_v_url); if (unlikely((!__pyx_t_13) && PyErr_Occurred())) __PYX_ERR(0, 466, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_AsWritableUString(__pyx_v_url); if (unlikely((!__pyx_t_13) && PyErr_Occurred())) __PYX_ERR(0, 467, __pyx_L1_error)
   __pyx_t_2 = ((!(WinHttpCreateUrl((&__pyx_v_res), 0, ((LPWSTR)((unsigned char *)__pyx_t_13)), (&__pyx_v_url_len)) != 0)) != 0);
   if (__pyx_t_2) {
 
-    /* "_winhttp.pyx":467
+    /* "_winhttp.pyx":468
  *     cdef DWORD url_len = 255
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):
  *         if GetLastError() != ERROR_INSUFFICIENT_BUFFER:             # <<<<<<<<<<<<<<
@@ -8589,16 +8589,16 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
     __pyx_t_2 = ((GetLastError() != ERROR_INSUFFICIENT_BUFFER) != 0);
     if (__pyx_t_2) {
 
-      /* "_winhttp.pyx":468
+      /* "_winhttp.pyx":469
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):
  *         if GetLastError() != ERROR_INSUFFICIENT_BUFFER:
  *             raise_error()             # <<<<<<<<<<<<<<
  *         url = bytearray((url_len + 1) * sizeof(Py_UNICODE))
  *         check_bool(WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len))
  */
-      __pyx_t_14 = __pyx_f_8_winhttp_raise_error(NULL); if (unlikely(__pyx_t_14 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 468, __pyx_L1_error)
+      __pyx_t_14 = __pyx_f_8_winhttp_raise_error(NULL); if (unlikely(__pyx_t_14 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 469, __pyx_L1_error)
 
-      /* "_winhttp.pyx":467
+      /* "_winhttp.pyx":468
  *     cdef DWORD url_len = 255
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):
  *         if GetLastError() != ERROR_INSUFFICIENT_BUFFER:             # <<<<<<<<<<<<<<
@@ -8607,32 +8607,32 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
     }
 
-    /* "_winhttp.pyx":469
+    /* "_winhttp.pyx":470
  *         if GetLastError() != ERROR_INSUFFICIENT_BUFFER:
  *             raise_error()
  *         url = bytearray((url_len + 1) * sizeof(Py_UNICODE))             # <<<<<<<<<<<<<<
  *         check_bool(WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len))
  *     return url[:url_len * sizeof(Py_UNICODE)].decode('utf-16-le')
  */
-    __pyx_t_7 = __Pyx_PyInt_FromSize_t(((__pyx_v_url_len + 1) * (sizeof(Py_UNICODE)))); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 469, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_FromSize_t(((__pyx_v_url_len + 1) * (sizeof(Py_UNICODE)))); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 470, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyByteArray_Type)), __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 469, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyByteArray_Type)), __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 470, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF_SET(__pyx_v_url, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "_winhttp.pyx":470
+    /* "_winhttp.pyx":471
  *             raise_error()
  *         url = bytearray((url_len + 1) * sizeof(Py_UNICODE))
  *         check_bool(WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len))             # <<<<<<<<<<<<<<
  *     return url[:url_len * sizeof(Py_UNICODE)].decode('utf-16-le')
  * 
  */
-    __pyx_t_13 = __Pyx_PyObject_AsWritableUString(__pyx_v_url); if (unlikely((!__pyx_t_13) && PyErr_Occurred())) __PYX_ERR(0, 470, __pyx_L1_error)
-    __pyx_t_15 = __pyx_f_8_winhttp_check_bool(WinHttpCreateUrl((&__pyx_v_res), 0, ((LPWSTR)((unsigned char *)__pyx_t_13)), (&__pyx_v_url_len))); if (unlikely(__pyx_t_15 == ((BOOL)0) && PyErr_Occurred())) __PYX_ERR(0, 470, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_AsWritableUString(__pyx_v_url); if (unlikely((!__pyx_t_13) && PyErr_Occurred())) __PYX_ERR(0, 471, __pyx_L1_error)
+    __pyx_t_15 = __pyx_f_8_winhttp_check_bool(WinHttpCreateUrl((&__pyx_v_res), 0, ((LPWSTR)((unsigned char *)__pyx_t_13)), (&__pyx_v_url_len))); if (unlikely(__pyx_t_15 == ((BOOL)0) && PyErr_Occurred())) __PYX_ERR(0, 471, __pyx_L1_error)
 
-    /* "_winhttp.pyx":466
+    /* "_winhttp.pyx":467
  *     url = bytearray(256 * sizeof(Py_UNICODE))
  *     cdef DWORD url_len = 255
  *     if not WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len):             # <<<<<<<<<<<<<<
@@ -8641,7 +8641,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  */
   }
 
-  /* "_winhttp.pyx":471
+  /* "_winhttp.pyx":472
  *         url = bytearray((url_len + 1) * sizeof(Py_UNICODE))
  *         check_bool(WinHttpCreateUrl(&res, 0, <LPWSTR><unsigned char*>url, &url_len))
  *     return url[:url_len * sizeof(Py_UNICODE)].decode('utf-16-le')             # <<<<<<<<<<<<<<
@@ -8649,13 +8649,13 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
  * cdef void _on_status_cb(
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_decode_bytearray(__pyx_v_url, 0, (__pyx_v_url_len * (sizeof(Py_UNICODE))), NULL, NULL, __Pyx_PyUnicode_DecodeUTF16LE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_decode_bytearray(__pyx_v_url, 0, (__pyx_v_url_len * (sizeof(Py_UNICODE))), NULL, NULL, __Pyx_PyUnicode_DecodeUTF16LE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_winhttp.pyx":424
+  /* "_winhttp.pyx":425
  *     )
  * 
  * def urlunsplit(parts):             # <<<<<<<<<<<<<<
@@ -8691,7 +8691,7 @@ static PyObject *__pyx_pf_8_winhttp_6urlunsplit(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "_winhttp.pyx":473
+/* "_winhttp.pyx":474
  *     return url[:url_len * sizeof(Py_UNICODE)].decode('utf-16-le')
  * 
  * cdef void _on_status_cb(             # <<<<<<<<<<<<<<
@@ -8721,7 +8721,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
   #endif
   __Pyx_RefNannySetupContext("_on_status_cb", 1);
 
-  /* "_winhttp.pyx":480
+  /* "_winhttp.pyx":481
  *     DWORD dwStatusInformationLength
  * ) nogil:
  *     cdef const WINHTTP_ASYNC_RESULT *res             # <<<<<<<<<<<<<<
@@ -8730,7 +8730,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
  */
   /*try:*/ {
 
-    /* "_winhttp.pyx":481
+    /* "_winhttp.pyx":482
  * ) nogil:
  *     cdef const WINHTTP_ASYNC_RESULT *res
  *     if dwInternetStatus == WINHTTP_CALLBACK_STATUS_HANDLE_CREATED:             # <<<<<<<<<<<<<<
@@ -8740,7 +8740,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
     __pyx_t_1 = ((__pyx_v_dwInternetStatus == WINHTTP_CALLBACK_STATUS_HANDLE_CREATED) != 0);
     if (__pyx_t_1) {
 
-      /* "_winhttp.pyx":482
+      /* "_winhttp.pyx":483
  *     cdef const WINHTTP_ASYNC_RESULT *res
  *     if dwInternetStatus == WINHTTP_CALLBACK_STATUS_HANDLE_CREATED:
  *         return             # <<<<<<<<<<<<<<
@@ -8749,7 +8749,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
  */
       goto __pyx_L3_return;
 
-      /* "_winhttp.pyx":481
+      /* "_winhttp.pyx":482
  * ) nogil:
  *     cdef const WINHTTP_ASYNC_RESULT *res
  *     if dwInternetStatus == WINHTTP_CALLBACK_STATUS_HANDLE_CREATED:             # <<<<<<<<<<<<<<
@@ -8758,7 +8758,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
  */
     }
 
-    /* "_winhttp.pyx":484
+    /* "_winhttp.pyx":485
  *         return
  * 
  *     with gil:             # <<<<<<<<<<<<<<
@@ -8771,19 +8771,19 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
         #endif
         /*try:*/ {
 
-          /* "_winhttp.pyx":485
+          /* "_winhttp.pyx":486
  * 
  *     with gil:
  *         status, handler = STATUS_MAP.get(dwInternetStatus)             # <<<<<<<<<<<<<<
  *         target = <object><void*>dwContext
  * 
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_STATUS_MAP); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L8_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_STATUS_MAP); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L8_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 486, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = __Pyx_PyInt_From_DWORD(__pyx_v_dwInternetStatus); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L8_error)
+          __pyx_t_3 = __Pyx_PyInt_From_DWORD(__pyx_v_dwInternetStatus); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_5 = NULL;
           if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -8798,7 +8798,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 485, __pyx_L8_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 486, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           if ((likely(PyTuple_CheckExact(__pyx_t_2))) || (PyList_CheckExact(__pyx_t_2))) {
@@ -8807,7 +8807,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             if (unlikely(size != 2)) {
               if (size > 2) __Pyx_RaiseTooManyValuesError(2);
               else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-              __PYX_ERR(0, 485, __pyx_L8_error)
+              __PYX_ERR(0, 486, __pyx_L8_error)
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
             if (likely(PyTuple_CheckExact(sequence))) {
@@ -8820,15 +8820,15 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_INCREF(__pyx_t_4);
             __Pyx_INCREF(__pyx_t_3);
             #else
-            __pyx_t_4 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L8_error)
+            __pyx_t_4 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 486, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L8_error)
+            __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           } else {
             Py_ssize_t index = -1;
-            __pyx_t_5 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 485, __pyx_L8_error)
+            __pyx_t_5 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 486, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __pyx_t_6 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -8836,7 +8836,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_GOTREF(__pyx_t_4);
             index = 1; __pyx_t_3 = __pyx_t_6(__pyx_t_5); if (unlikely(!__pyx_t_3)) goto __pyx_L10_unpacking_failed;
             __Pyx_GOTREF(__pyx_t_3);
-            if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 485, __pyx_L8_error)
+            if (__Pyx_IternextUnpackEndCheck(__pyx_t_6(__pyx_t_5), 2) < 0) __PYX_ERR(0, 486, __pyx_L8_error)
             __pyx_t_6 = NULL;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             goto __pyx_L11_unpacking_done;
@@ -8844,7 +8844,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __pyx_t_6 = NULL;
             if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-            __PYX_ERR(0, 485, __pyx_L8_error)
+            __PYX_ERR(0, 486, __pyx_L8_error)
             __pyx_L11_unpacking_done:;
           }
           __pyx_v_status = __pyx_t_4;
@@ -8852,7 +8852,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_v_handler = __pyx_t_3;
           __pyx_t_3 = 0;
 
-          /* "_winhttp.pyx":486
+          /* "_winhttp.pyx":487
  *     with gil:
  *         status, handler = STATUS_MAP.get(dwInternetStatus)
  *         target = <object><void*>dwContext             # <<<<<<<<<<<<<<
@@ -8864,7 +8864,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_v_target = __pyx_t_2;
           __pyx_t_2 = 0;
 
-          /* "_winhttp.pyx":488
+          /* "_winhttp.pyx":489
  *         target = <object><void*>dwContext
  * 
  *         data = None             # <<<<<<<<<<<<<<
@@ -8874,7 +8874,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __Pyx_INCREF(Py_None);
           __pyx_v_data = Py_None;
 
-          /* "_winhttp.pyx":489
+          /* "_winhttp.pyx":490
  * 
  *         data = None
  *         if handler is str:             # <<<<<<<<<<<<<<
@@ -8885,14 +8885,14 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_t_7 = (__pyx_t_1 != 0);
           if (__pyx_t_7) {
 
-            /* "_winhttp.pyx":490
+            /* "_winhttp.pyx":491
  *         data = None
  *         if handler is str:
  *             data = <str>((<const Py_UNICODE*>lpvStatusInformation)[:dwStatusInformationLength])             # <<<<<<<<<<<<<<
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:
  *             data = <int>((<const DWORD*>lpvStatusInformation)[0])
  */
-            __pyx_t_2 = __Pyx_PyUnicode_FromUnicodeAndLength(((Py_UNICODE const *)__pyx_v_lpvStatusInformation) + 0, __pyx_v_dwStatusInformationLength - 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 490, __pyx_L8_error)
+            __pyx_t_2 = __Pyx_PyUnicode_FromUnicodeAndLength(((Py_UNICODE const *)__pyx_v_lpvStatusInformation) + 0, __pyx_v_dwStatusInformationLength - 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 491, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_3 = __pyx_t_2;
             __Pyx_INCREF(__pyx_t_3);
@@ -8900,7 +8900,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_DECREF_SET(__pyx_v_data, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "_winhttp.pyx":489
+            /* "_winhttp.pyx":490
  * 
  *         data = None
  *         if handler is str:             # <<<<<<<<<<<<<<
@@ -8910,7 +8910,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             goto __pyx_L12;
           }
 
-          /* "_winhttp.pyx":491
+          /* "_winhttp.pyx":492
  *         if handler is str:
  *             data = <str>((<const Py_UNICODE*>lpvStatusInformation)[:dwStatusInformationLength])
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:             # <<<<<<<<<<<<<<
@@ -8929,19 +8929,19 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_L13_bool_binop_done:;
           if (__pyx_t_7) {
 
-            /* "_winhttp.pyx":492
+            /* "_winhttp.pyx":493
  *             data = <str>((<const Py_UNICODE*>lpvStatusInformation)[:dwStatusInformationLength])
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:
  *             data = <int>((<const DWORD*>lpvStatusInformation)[0])             # <<<<<<<<<<<<<<
  *         elif handler is not None:
  *             data = handler(<DWORD_PTR>lpvStatusInformation, dwStatusInformationLength)
  */
-            __pyx_t_3 = __Pyx_PyInt_From_int(((int)(((DWORD const *)__pyx_v_lpvStatusInformation)[0]))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 492, __pyx_L8_error)
+            __pyx_t_3 = __Pyx_PyInt_From_int(((int)(((DWORD const *)__pyx_v_lpvStatusInformation)[0]))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 493, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF_SET(__pyx_v_data, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "_winhttp.pyx":491
+            /* "_winhttp.pyx":492
  *         if handler is str:
  *             data = <str>((<const Py_UNICODE*>lpvStatusInformation)[:dwStatusInformationLength])
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:             # <<<<<<<<<<<<<<
@@ -8951,7 +8951,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             goto __pyx_L12;
           }
 
-          /* "_winhttp.pyx":493
+          /* "_winhttp.pyx":494
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:
  *             data = <int>((<const DWORD*>lpvStatusInformation)[0])
  *         elif handler is not None:             # <<<<<<<<<<<<<<
@@ -8962,16 +8962,16 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __pyx_t_8 = (__pyx_t_7 != 0);
           if (__pyx_t_8) {
 
-            /* "_winhttp.pyx":494
+            /* "_winhttp.pyx":495
  *             data = <int>((<const DWORD*>lpvStatusInformation)[0])
  *         elif handler is not None:
  *             data = handler(<DWORD_PTR>lpvStatusInformation, dwStatusInformationLength)             # <<<<<<<<<<<<<<
  * 
  *         target._on_status(
  */
-            __pyx_t_2 = __Pyx_PyInt_FromSize_t(((DWORD_PTR)__pyx_v_lpvStatusInformation)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L8_error)
+            __pyx_t_2 = __Pyx_PyInt_FromSize_t(((DWORD_PTR)__pyx_v_lpvStatusInformation)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 495, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_4 = __Pyx_PyInt_From_DWORD(__pyx_v_dwStatusInformationLength); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 494, __pyx_L8_error)
+            __pyx_t_4 = __Pyx_PyInt_From_DWORD(__pyx_v_dwStatusInformationLength); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 495, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_INCREF(__pyx_v_handler);
             __pyx_t_5 = __pyx_v_handler; __pyx_t_9 = NULL;
@@ -8989,7 +8989,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             #if CYTHON_FAST_PYCALL
             if (PyFunction_Check(__pyx_t_5)) {
               PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_t_2, __pyx_t_4};
-              __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 494, __pyx_L8_error)
+              __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 495, __pyx_L8_error)
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8999,7 +8999,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             #if CYTHON_FAST_PYCCALL
             if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
               PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_t_2, __pyx_t_4};
-              __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 494, __pyx_L8_error)
+              __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 2+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 495, __pyx_L8_error)
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -9007,7 +9007,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             } else
             #endif
             {
-              __pyx_t_11 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 494, __pyx_L8_error)
+              __pyx_t_11 = PyTuple_New(2+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 495, __pyx_L8_error)
               __Pyx_GOTREF(__pyx_t_11);
               if (__pyx_t_9) {
                 __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -9018,7 +9018,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
               PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_10, __pyx_t_4);
               __pyx_t_2 = 0;
               __pyx_t_4 = 0;
-              __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 494, __pyx_L8_error)
+              __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 495, __pyx_L8_error)
               __Pyx_GOTREF(__pyx_t_3);
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             }
@@ -9026,7 +9026,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_DECREF_SET(__pyx_v_data, __pyx_t_3);
             __pyx_t_3 = 0;
 
-            /* "_winhttp.pyx":493
+            /* "_winhttp.pyx":494
  *         elif handler is int and sizeof(DWORD) == dwStatusInformationLength:
  *             data = <int>((<const DWORD*>lpvStatusInformation)[0])
  *         elif handler is not None:             # <<<<<<<<<<<<<<
@@ -9036,27 +9036,27 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           }
           __pyx_L12:;
 
-          /* "_winhttp.pyx":496
+          /* "_winhttp.pyx":497
  *             data = handler(<DWORD_PTR>lpvStatusInformation, dwStatusInformationLength)
  * 
  *         target._on_status(             # <<<<<<<<<<<<<<
  *             dwContext,
  *             status,
  */
-          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_target, __pyx_n_s_on_status); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 496, __pyx_L8_error)
+          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_target, __pyx_n_s_on_status); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 497, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_5);
 
-          /* "_winhttp.pyx":497
+          /* "_winhttp.pyx":498
  * 
  *         target._on_status(
  *             dwContext,             # <<<<<<<<<<<<<<
  *             status,
  *             data
  */
-          __pyx_t_11 = __Pyx_PyInt_FromSize_t(__pyx_v_dwContext); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 497, __pyx_L8_error)
+          __pyx_t_11 = __Pyx_PyInt_FromSize_t(__pyx_v_dwContext); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 498, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_11);
 
-          /* "_winhttp.pyx":499
+          /* "_winhttp.pyx":500
  *             dwContext,
  *             status,
  *             data             # <<<<<<<<<<<<<<
@@ -9077,7 +9077,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           #if CYTHON_FAST_PYCALL
           if (PyFunction_Check(__pyx_t_5)) {
             PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_11, __pyx_v_status, __pyx_v_data};
-            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L8_error)
+            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 497, __pyx_L8_error)
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -9086,14 +9086,14 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           #if CYTHON_FAST_PYCCALL
           if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
             PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_11, __pyx_v_status, __pyx_v_data};
-            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L8_error)
+            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_10, 3+__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 497, __pyx_L8_error)
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           } else
           #endif
           {
-            __pyx_t_2 = PyTuple_New(3+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 496, __pyx_L8_error)
+            __pyx_t_2 = PyTuple_New(3+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_2);
             if (__pyx_t_4) {
               __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -9107,7 +9107,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
             __Pyx_GIVEREF(__pyx_v_data);
             PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_10, __pyx_v_data);
             __pyx_t_11 = 0;
-            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L8_error)
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 497, __pyx_L8_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           }
@@ -9115,7 +9115,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
 
-        /* "_winhttp.pyx":484
+        /* "_winhttp.pyx":485
  *         return
  * 
  *     with gil:             # <<<<<<<<<<<<<<
@@ -9140,7 +9140,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
     }
   }
 
-  /* "_winhttp.pyx":480
+  /* "_winhttp.pyx":481
  *     DWORD dwStatusInformationLength
  * ) nogil:
  *     cdef const WINHTTP_ASYNC_RESULT *res             # <<<<<<<<<<<<<<
@@ -9169,7 +9169,7 @@ static void __pyx_f_8_winhttp__on_status_cb(CYTHON_UNUSED HINTERNET __pyx_v_hInt
     __pyx_L5:;
   }
 
-  /* "_winhttp.pyx":473
+  /* "_winhttp.pyx":474
  *     return url[:url_len * sizeof(Py_UNICODE)].decode('utf-16-le')
  * 
  * cdef void _on_status_cb(             # <<<<<<<<<<<<<<
@@ -10132,14 +10132,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "_winhttp.pyx":400
+  /* "_winhttp.pyx":401
  *     query, _, fragment = res.lpszExtraInfo[:res.dwExtraInfoLength].rpartition('#')
  *     if query and query[0] == "?":
  *         query = query[1:]             # <<<<<<<<<<<<<<
  * 
  *     netloc = res.lpszHostName[:res.dwHostNameLength] if res.dwHostNameLength and res.dwSchemeLength else ""
  */
-  __pyx_slice__26 = PySlice_New(__pyx_int_1, Py_None, Py_None); if (unlikely(!__pyx_slice__26)) __PYX_ERR(0, 400, __pyx_L1_error)
+  __pyx_slice__26 = PySlice_New(__pyx_int_1, Py_None, Py_None); if (unlikely(!__pyx_slice__26)) __PYX_ERR(0, 401, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__26);
   __Pyx_GIVEREF(__pyx_slice__26);
 
@@ -10266,29 +10266,29 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
 
-  /* "_winhttp.pyx":381
- *         return conn
+  /* "_winhttp.pyx":382
+ * 
  * 
  * def urlsplit(str url):             # <<<<<<<<<<<<<<
  *     cdef URL_COMPONENTS res
  * 
  */
-  __pyx_tuple__44 = PyTuple_Pack(8, __pyx_n_s_url_2, __pyx_n_s_res, __pyx_n_s_query, __pyx_n_s__43, __pyx_n_s_fragment, __pyx_n_s_netloc, __pyx_n_s_username, __pyx_n_s_password); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_tuple__44 = PyTuple_Pack(8, __pyx_n_s_url_2, __pyx_n_s_res, __pyx_n_s_query, __pyx_n_s__43, __pyx_n_s_fragment, __pyx_n_s_netloc, __pyx_n_s_username, __pyx_n_s_password); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__44);
   __Pyx_GIVEREF(__pyx_tuple__44);
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_winhttp__winhttp_pyx, __pyx_n_s_urlsplit, 381, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_winhttp__winhttp_pyx, __pyx_n_s_urlsplit, 382, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 382, __pyx_L1_error)
 
-  /* "_winhttp.pyx":424
+  /* "_winhttp.pyx":425
  *     )
  * 
  * def urlunsplit(parts):             # <<<<<<<<<<<<<<
  *     # str scheme, str netloc, str path, str query, str fragment, str username, str password, str host, int port
  *     cdef URL_COMPONENTS res
  */
-  __pyx_tuple__46 = PyTuple_Pack(16, __pyx_n_s_parts, __pyx_n_s_res, __pyx_n_s_ipart, __pyx_n_s_scheme, __pyx_n_s_netloc, __pyx_n_s_path, __pyx_n_s_query, __pyx_n_s_fragment, __pyx_n_s_username, __pyx_n_s_password, __pyx_n_s_host_2, __pyx_n_s_port_2, __pyx_n_s__43, __pyx_n_s_extra, __pyx_n_s_url_2, __pyx_n_s_url_len); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 424, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(16, __pyx_n_s_parts, __pyx_n_s_res, __pyx_n_s_ipart, __pyx_n_s_scheme, __pyx_n_s_netloc, __pyx_n_s_path, __pyx_n_s_query, __pyx_n_s_fragment, __pyx_n_s_username, __pyx_n_s_password, __pyx_n_s_host_2, __pyx_n_s_port_2, __pyx_n_s__43, __pyx_n_s_extra, __pyx_n_s_url_2, __pyx_n_s_url_len); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_winhttp__winhttp_pyx, __pyx_n_s_urlunsplit, 424, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 424, __pyx_L1_error)
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_winhttp__winhttp_pyx, __pyx_n_s_urlunsplit, 425, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -11318,28 +11318,28 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_k__21 = INTERNET_DEFAULT_PORT;
 
-  /* "_winhttp.pyx":381
- *         return conn
+  /* "_winhttp.pyx":382
+ * 
  * 
  * def urlsplit(str url):             # <<<<<<<<<<<<<<
  *     cdef URL_COMPONENTS res
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8_winhttp_5urlsplit, NULL, __pyx_n_s_winhttp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8_winhttp_5urlsplit, NULL, __pyx_n_s_winhttp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_urlsplit, __pyx_t_1) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_urlsplit, __pyx_t_1) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_winhttp.pyx":424
+  /* "_winhttp.pyx":425
  *     )
  * 
  * def urlunsplit(parts):             # <<<<<<<<<<<<<<
  *     # str scheme, str netloc, str path, str query, str fragment, str username, str password, str host, int port
  *     cdef URL_COMPONENTS res
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8_winhttp_7urlunsplit, NULL, __pyx_n_s_winhttp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 424, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8_winhttp_7urlunsplit, NULL, __pyx_n_s_winhttp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_urlunsplit, __pyx_t_1) < 0) __PYX_ERR(0, 424, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_urlunsplit, __pyx_t_1) < 0) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "_winhttp.pyx":2
